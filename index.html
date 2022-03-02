@@ -33,17 +33,16 @@
 
     <div class="goal_display row border">
       <div class="border py-5 px-3 my-5 col-3">
-        <h2 for="goal_input">Goal List</h2>
+        <h2>Goal List</h2>
 
         <input type="text" id="goal_input" name="goal_input" />
-        <button class="goal_button">Add Goal</button>
+        <button id="goal_button" class="goal_button">Add Goal</button>
       </div>
       <div class="border col-9 my-5">
-        <ul id="goal_list">
-          <li>honey bunches of oats</li>
-        </ul>
+        <ul id="goal_listParent"></ul>
         <!-- save goals button that pushes it to local storage-->
       </div>
     </div>
+    <script src="assets/goalList.js"></script>
   </body>
 </html>
