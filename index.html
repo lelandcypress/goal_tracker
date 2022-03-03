@@ -14,31 +14,42 @@
     <title>Goal Tracker</title>
   </head>
   <body class="container">
-    <div class="my-5 d-flex justify-content-center border">
-      <h1 class="header">Goal Tracker MVP</h1>
+    <div class="my-5 d-flex justify-content-center">
+      <h1 class="header">Goal Tracker Prototype</h1>
     </div>
-    <div id="weekly_focus" class="p-5 mb-5 border row">
-      <div class="border col-3">
-        <h2 class="mb-5">Weekly Focus</h2>
-        <button id="fateButton" class="goal_button">Let the App Decide</button>
+    <div id="weekly_focus" class="mb-5 row divBorders">
+      <div class="col-3">
+        <h3>Today's Date: <span id="date"></span></h3>
+        <h2 class="mb-4">Current Task</h2>
+        <button id="fateButton" class="goal_button button">
+          Let Fate Decide
+        </button>
       </div>
-      <div class="col-9 border">
-        <p id="goalText">
-          ipsum lorem
-          <!-- random item from local storage is pulled and displayed here -->
+      <div class="col-9">
+        <p id="goalText" class="d-flex justify-content-center selectedGoal">
+         What's your focus? <!-- random item from local storage is pulled and displayed here -->
         </p>
-        <p id="motivateMe" class="moto_text"></p>
+        <p
+          id="motivateMe"
+          class="moto_text d-flex justify-content-center py-4 mb-5"
+        >
+         
+        </p>
       </div>
     </div>
 
-    <div class="goal_display row border">
-      <div class="border py-5 px-3 my-5 col-3">
-        <h2>Goal List</h2>
-
-        <input type="text" id="goal_input" name="goal_input" />
-        <button id="goal_button" class="goal_button">Add Goal</button>
+    <div class="goal_display row divBorders">
+      <div class="px-3my-5 col-3">
+        <h2 class="d-flex align-items-start mb-5">Goal List</h2>
+        <input
+          type="text"
+          id="goal_input"
+          name="goal_input"
+          class="form-control d-flex align-items-start"
+        />
+        <button id="goal_button" class="goal_button button">Add Goal</button>
       </div>
-      <div class="border col-9 my-5">
+      <div class="col-9 my-5">
         <ul id="goal_listParent"></ul>
         <!-- save goals button that pushes it to local storage-->
       </div>

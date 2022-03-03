@@ -4,6 +4,10 @@ const goalListParent = document.getElementById("goal_listParent");
 const fateButton = document.getElementById("fateButton");
 const goalText = document.getElementById("goalText");
 const motivateMe = document.getElementById("motivateMe");
+const calendar = document.getElementById("date");
+const today = new Date();
+var date =
+  today.getMonth() + 1 + "/" + today.getDate() + "/" + today.getFullYear();
 
 let goalList = [];
 
@@ -11,6 +15,8 @@ function decideMyFate() {
   let randomLength = goalList.length;
   let random = Math.floor(Math.random() * randomLength);
   let selectedGoal = goalList[random];
+  console.log(selectedGoal);
+  console.log(random);
   goalText.innerHTML = selectedGoal;
 }
 
@@ -28,6 +34,7 @@ function updateLocalStorage(array) {
 function displayGoals(array) {
   for (let i = 0; i < array.length; i++) {
     const listItem = document.createElement("p");
+    listItem.classList.add("addedGoal");
     listItem.textContent = array[i];
     goalListParent.appendChild(listItem);
   }
@@ -39,6 +46,7 @@ function init() {
     goalList = savedGoals;
   }
   displayGoals(goalList);
+  calendar.innerHTML = date;
 }
 
 goalButton.addEventListener("click", function () {
@@ -51,7 +59,6 @@ goalButton.addEventListener("click", function () {
 });
 
 fateButton.addEventListener("click", function () {
-  goalText.innerHTML = "";
   motivateMe.innerHTML = "";
   decideMyFate();
   generateQuote();

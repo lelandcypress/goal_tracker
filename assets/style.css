@@ -1,21 +1,25 @@
 body {
-  background: linear-gradient(0.25turn, #3f87a6, #1f235a);
+  background: linear-gradient(0.25turn, #3f87a6, #8085d1);
 }
 .goal_button {
   border-radius: 7px;
-  height: 30px;
   background-color: aquamarine;
 }
 .selectedGoal {
   /*visibility: hidden;*/
   font-size: 200%;
-
 }
 .moto_text {
   /*visibility: hidden;*/
   font-size: 120%;
-  display: block;
-  position: relative;
-  left: 50px;
+}
 
+.divBorders {
+  border: rgba(87, 15, 15, 0.301) 3px solid;
+}
+.addedGoal {
+  border: black 1px solid;
+  border-radius: 25px;
+  padding-left: 125px;
+  background-color: rgba(182, 155, 155, 0.513);
 }
