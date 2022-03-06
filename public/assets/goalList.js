@@ -15,9 +15,11 @@ function decideMyFate() {
   let randomLength = goalList.length;
   let random = Math.floor(Math.random() * randomLength);
   let selectedGoal = goalList[random];
-  console.log(selectedGoal);
-  console.log(random);
-  goalText.innerHTML = selectedGoal;
+  if (!selectedGoal) {
+    goalText.innerHTML = "Love the enthusiasm, but enter some goals first!";
+  } else {
+    goalText.innerHTML = selectedGoal;
+  }
 }
 
 function generateQuote() {
@@ -49,13 +51,24 @@ function init() {
   calendar.innerHTML = date;
 }
 
+goalInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    goalButton.click();
+  }
+});
+
 goalButton.addEventListener("click", function () {
-  goalListParent.innerHTML = "";
   const goalEntry = goalInput.value;
-  goalList.push(goalEntry);
-  displayGoals(goalList);
-  updateLocalStorage(goalList);
-  goalInput.value = "";
+  if (goalEntry === "") {
+    return;
+  } else {
+    goalListParent.innerHTML = "";
+    goalList.push(goalEntry);
+    displayGoals(goalList);
+    updateLocalStorage(goalList);
+    goalInput.value = "";
+  }
 });
 
 fateButton.addEventListener("click", function () {
