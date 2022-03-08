@@ -1,6 +1,7 @@
 // import npm packages here
 const express = require("express");
 const dotenv = require("dotenv");
+const db = require("./config/connection");
 
 //set up express and PORT here
 const app = express();
@@ -17,4 +18,6 @@ app.get("/", (req, res) => {
 });
 
 //start server here
-app.listen(PORT, () => console.log("APP Online! Have a nice day!"));
+db.once("open", () => {
+  app.listen(PORT, () => console.log("Mongoose Online! Great Job"));
+});
