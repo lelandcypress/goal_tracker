@@ -27,14 +27,13 @@
       </div>
       <div class="col-9">
         <p id="goalText" class="d-flex justify-content-center selectedGoal">
-         What's your focus? <!-- random item from local storage is pulled and displayed here -->
+          What's your focus?
+          <!-- random item from local storage is pulled and displayed here -->
         </p>
         <p
           id="motivateMe"
           class="moto_text d-flex justify-content-center py-4 mb-5"
-        >
-         
-        </p>
+        ></p>
       </div>
     </div>
 
@@ -50,11 +49,12 @@
         <button id="goal_button" class="goal_button button">Add Goal</button>
       </div>
       <div class="col-9 my-5">
-        <ul id="goal_listParent"></ul>
+        <div id="goal_listParent" class="col-9"></div>
         <!-- save goals button that pushes it to local storage-->
       </div>
     </div>
     <script src="assets/goalList.js"></script>
     <script src="assets/quote.js"></script>
+    <script src="assets/API.js"></script>
   </body>
 </html>

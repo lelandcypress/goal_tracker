@@ -35,10 +35,23 @@ function updateLocalStorage(array) {
 
 function displayGoals(array) {
   for (let i = 0; i < array.length; i++) {
-    const listItem = document.createElement("p");
+    const deleteButton = document.createElement("span");
+    deleteButton.textContent = "Delete";
+    const listItem = document.createElement("div");
+    const listItemText = document.createElement("div");
+
+    listItem.classList.add("row");
+    listItem.classList.add("my-2");
+    listItem.classList.add("justify-content-center");
     listItem.classList.add("addedGoal");
-    listItem.textContent = array[i];
+    listItemText.textContent = array[i];
+    listItemText.classList.add("col-9");
+
+    deleteButton.classList.add("col-2");
+    deleteButton.classList.add("btn");
     goalListParent.appendChild(listItem);
+    listItem.appendChild(listItemText);
+    listItem.appendChild(deleteButton);
   }
 }
 
@@ -66,6 +79,7 @@ goalButton.addEventListener("click", function () {
     goalListParent.innerHTML = "";
     goalList.push(goalEntry);
     displayGoals(goalList);
+    createGoal();
     updateLocalStorage(goalList);
     goalInput.value = "";
   }

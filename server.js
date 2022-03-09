@@ -13,11 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
-  res.send("Home route successful");
-});
-
 //start server here
 db.once("open", () => {
-  app.listen(PORT, () => console.log("Mongoose Online! Great Job"));
+  app.listen(PORT, () => console.log("Goal Tracker Online! Get After It"));
 });
