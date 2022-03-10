@@ -12,7 +12,7 @@ const goalSchema = new Schema({
   goalDate: {
     type: Date,
   },
-  subTask: [subTaskSchema],
+  //subTask: [subTaskSchema],
 });
 
 const Goals = model("Goals", goalSchema);

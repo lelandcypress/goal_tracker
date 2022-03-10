@@ -18,7 +18,7 @@ const userSchema = new Schema({
     required: true,
   },
 
-  orders: [Goals.schema],
+  goals: [Goals.schema],
 });
 
 // set up pre-save middleware to create password

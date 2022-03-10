@@ -73,14 +73,11 @@ goalInput.addEventListener("keypress", function (e) {
 
 goalButton.addEventListener("click", function () {
   const goalEntry = goalInput.value;
-  if (goalEntry === "") {
+  if (!goalEntry) {
     return;
   } else {
     goalListParent.innerHTML = "";
-    goalList.push(goalEntry);
-    displayGoals(goalList);
     createGoal();
-    updateLocalStorage(goalList);
     goalInput.value = "";
   }
 });

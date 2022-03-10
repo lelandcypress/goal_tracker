@@ -6,7 +6,8 @@ router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../public.index.html"));
 });
 
-router.post("/", async (req, res) => {
+router.post("/goals", async (req, res) => {
+  console.log(req.body);
   try {
     const newGoal = await Goals.create({});
     res.json(newGoal);
@@ -14,7 +15,5 @@ router.post("/", async (req, res) => {
     res.status(400).json(err);
   }
 });
-
-
 
 module.exports = router;
