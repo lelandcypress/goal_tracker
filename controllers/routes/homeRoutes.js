@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
 router.post("/goals", async (req, res) => {
   console.log(req.body);
   try {
-    const newGoal = await Goals.create({});
+    const newGoal = await Goals.create(req.body);
     res.json(newGoal);
   } catch (err) {
     res.status(400).json(err);
@@ -17,3 +17,13 @@ router.post("/goals", async (req, res) => {
 });
 
 module.exports = router;
+
+//add get request for goals list
+router.get("/goals", async (req, res) => {
+  try {
+    const allGoals = await Goals.find({});
+    res.json(allGoals);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});

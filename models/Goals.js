@@ -3,8 +3,9 @@ const { subTaskSchema } = require("./SubTask");
 
 const goalSchema = new Schema({
   name: {
-    type: String,
     required: true,
+    type: String,
+    trim: true,
   },
   startDate: {
     type: Date,

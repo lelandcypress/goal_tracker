@@ -1,10 +1,10 @@
 const createGoal = async () => {
   //bug here
-  const goalContent = goalInput.value.trim();
+  const goalName = goalInput.value.trim();
 
   const response = await fetch("/goals", {
     method: "POST",
-    body: JSON.stringify(goalContent),
+    body: JSON.stringify({ name: goalName }),
     headers: {
       "Content-Type": "application/json",
     },
