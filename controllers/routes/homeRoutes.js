@@ -27,3 +27,13 @@ router.get("/goals", async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+router.delete("/goals/:id", async (req, res) => {
+  console.log(req.params.id);
+  try {
+    await Goals.deleteOne({ _id: req.params.id });
+    res.send("Goal Deleted");
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});

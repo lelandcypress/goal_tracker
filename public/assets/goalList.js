@@ -29,9 +29,7 @@ function generateQuote() {
   motivateMe.innerHTML = selectedQuote;
 }
 
-function updateLocalStorage(array) {
-  localStorage.setItem("goals", JSON.stringify(array));
-}
+
 
 function displayGoals(array) {
   for (let i = 0; i < array.length; i++) {
