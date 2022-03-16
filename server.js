@@ -2,7 +2,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const db = require("./config/connection");
-const routes = require("./controllers/routes/homeRoutes");
+const routes = require("./controllers/routes");
 
 //set up express and PORT here
 const app = express();
